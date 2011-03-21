@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DemoApp</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body style="border: 1px solid red; padding: 10px;">
+  <h5>app/views/layouts/application.html.erb</h5>
+
+  <div style="border: 1px solid purple; padding: 10px; margin: 10px;">
+    <code>content_for :greetings</code>:
+    (object_id = <%= self.object_id %>)
+    <%= debug content_for :greetings %>
+    <p>(Why does that include the green div??)</p>
+  </div>
+
+  <div style="border: 1px solid purple; padding: 10px; margin: 10px;">
+    <code>yield</code>:
+    <%= yield %>
+  </div>
+
+</body>
+</html>

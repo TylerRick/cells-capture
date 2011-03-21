@@ -1,0 +1,9 @@
+source 'http://rubygems.org'
+
+gem 'rails'
+
+gem 'sqlite3'
+#gem 'cells', :path => '...'
+gem 'cells'
+gem 'cells-capture', :path => '..'
+gem 'ruby-debug19'

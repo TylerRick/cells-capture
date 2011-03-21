@@ -1,0 +1,8 @@
+<div style="border: 1px solid green; padding: 10px;">
+  <h5>app/cells/capture_test/display.html.erb</h5>
+  <p>Calling <code>outer_content_for :greetings</code>...</p>
+  <% outer_content_for :greetings do %>
+    <p>Hello from app/cells/capture_test/display.html.erb</p>
+  <% end %>
+  <p>... finished calling <code>outer_content_for :greetings</code>. (Why does that get output in app/cells/capture_test/display.html.erb instead of being captured??)</p>
+</div>
