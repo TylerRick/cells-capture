@@ -1,0 +1,33 @@
+= Cells Capture helpers
+
+== Intro
+
+This adds some helpers to Cells <http://github.com/apotonick/cells>.
+
+Example:
+
+app/cells/capture_test/display.html.erb
+
+  <% outer_content_for :greetings do %>
+    <h1>Hello world!</h1>
+  <% end %>
+
+If you then render this cell from a view (doesn't work from a controller because it requires the view context), say like this:
+
+app/views/home/index.html.erb
+
+  <%= render_cell :capture_test, :display %>
+
+This executes #content_for in the context of the outer ActionView view context. The captured markup can then be accessed in your outer action view or in your layout, like this:
+
+app/views/layouts/application.html.erb:
+
+  <%= content_for :greetings %>
+
+== Known issues
+
+It appears that the markup within the outer_content_for block in your cell view appends that markup to your cell view instead of simply capturing it. This is a serious problem and I'm not sure why it is happening.
+
+== History
+
+See the comments on https://github.com/TylerRick/cells/commit/b06def3f6d37011d7ababd527e57e65aadbe08a1
